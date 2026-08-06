@@ -1,8 +1,10 @@
 import { MainLayout } from './layouts/MainLayout'
+import { HomePage } from './pages/HomePage'
+
 function App() {
   return (
     <MainLayout>
-      <h1>La Forja</h1>
+      <HomePage />
     </MainLayout>
   )
 }

@@ -1,11 +1,16 @@
-type MainLayoutProps = {
+import { Header } from '../components/header/Header'
+
+type Props = {
   children: React.ReactNode
 }
 
-export default function MainLayout({ children }: MainLayoutProps) {
+export function MainLayout({ children }: Props) {
   return (
-    <>
-      {children}
-    </>
+    <div>
+      <Header />
+      <main>
+        {children}
+      </main>
+    </div>
   )
 }
