@@ -1,4 +1,5 @@
 import { Header } from '../components/header/Header'
+import { WhatsAppButton } from '../components/whatsapp/WhatsAppButton'
 
 type Props = {
   children: React.ReactNode
@@ -6,11 +7,12 @@ type Props = {
 
 export function MainLayout({ children }: Props) {
   return (
-    <div>
+    <>
       <Header />
-      <main>
-        {children}
-      </main>
-    </div>
+
+      {children}
+
+      <WhatsAppButton />
+    </>
   )
 }
