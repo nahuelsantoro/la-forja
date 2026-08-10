@@ -1,0 +1,96 @@
+.brands {
+  padding: 72px 24px;
+  background-color: #ffffff;
+}
+
+.brands__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brands__heading {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.brands__heading span {
+  display: inline-block;
+  margin-bottom: 10px;
+
+  color: #f97316;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.brands__heading h2 {
+  margin: 0 0 14px;
+
+  color: #111111;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.brands__heading p {
+  margin: 0;
+
+  color: #5a5a5a;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.brands__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+.brand-card {
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  background-color: #f7f7f7;
+  border: 1px solid #e7e7e7;
+  border-radius: 10px;
+
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-3px);
+  border-color: #f97316;
+  color: #f97316;
+}
+
+@media (max-width: 1000px) {
+  .brands__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .brands {
+    padding: 56px 20px;
+  }
+
+  .brands__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand-card {
+    min-height: 85px;
+  }
+}

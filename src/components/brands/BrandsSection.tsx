@@ -1,16 +1,37 @@
+import './BrandsSection.css'
+
+const brands = [
+  'BOSCH',
+  'STANLEY',
+  'EINHELL',
+  'BREMEN',
+  'LUSQTOFF',
+  'WOKIN',
+]
+
 export function BrandsSection() {
   return (
-    <section>
-      <h2>Marcas líderes</h2>
+    <section className="brands">
+      <div className="brands__container">
+        <div className="brands__heading">
+          <span>MARCAS QUE TRABAJAMOS</span>
 
-      <ul>
-        <li>Bosch</li>
-        <li>Stanley</li>
-        <li>Einhell</li>
-        <li>Bremen</li>
-        <li>Lusqtoff</li>
-        <li>Wokin</li>
-      </ul>
+          <h2>Calidad que conocemos y podemos conseguir.</h2>
+
+          <p>
+            Trabajamos con marcas seleccionadas para ofrecerte
+            productos confiables y precios competitivos.
+          </p>
+        </div>
+
+        <div className="brands__grid">
+          {brands.map((brand) => (
+            <div className="brand-card" key={brand}>
+              {brand}
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
