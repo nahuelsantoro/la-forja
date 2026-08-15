@@ -1,14 +1,11 @@
-import "./WhatsAppButton.css";
+import './WhatsAppButton.css'
+import { buildWhatsAppUrl } from '../../config/whatsapp'
 
 export function WhatsAppButton() {
-  const phoneNumber = "5492212243516";
-
   const message =
-    "Hola! Estoy viendo la web de Ferretería La Forja y quería hacer una consulta.";
+    'Hola! Estoy viendo la web de Ferretería La Forja y quería hacer una consulta.'
 
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    message
-  )}`;
+  const whatsappUrl = buildWhatsAppUrl(message)
 
   return (
     <a
@@ -25,5 +22,5 @@ export function WhatsAppButton() {
         <strong>Escribinos por WhatsApp</strong>
       </span>
     </a>
-  );
+  )
 }

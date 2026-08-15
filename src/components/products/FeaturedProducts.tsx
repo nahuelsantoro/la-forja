@@ -1,5 +1,5 @@
 import './FeaturedProducts.css'
-
+import { buildWhatsAppUrl } from '../../config/whatsapp'
 import taladroBosch from '../../assets/products/taladro-bosh.webp'
 import cintaStanley from '../../assets/products/cinta-stanley.webp'
 import herramientasBremen from '../../assets/products/herramientas-bremen.webp'
@@ -70,9 +70,15 @@ export function FeaturedProducts() {
 
                 <strong>{product.price}</strong>
 
-                <a href="#">
-                  Ver producto →
-                </a>
+                <a
+  href={buildWhatsAppUrl(
+    `Hola! Estoy viendo la web de Ferretería La Forja y quería consultar por ${product.brand} - ${product.name}.`
+  )}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Consultar por WhatsApp →
+</a>
               </div>
             </article>
           ))}
