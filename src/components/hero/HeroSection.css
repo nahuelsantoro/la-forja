@@ -113,6 +113,50 @@
 
 @media (max-width: 768px) {
   .hero {
+    min-height: 520px;
+    padding: 56px 20px;
+
+    background-position: 68% center;
+  }
+
+  .hero::before {
+    background: rgba(0, 0, 0, 0.76);
+  }
+
+  .hero__eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 1.2px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    margin-bottom: 18px;
+
+    font-size: clamp(2.1rem, 10vw, 3.2rem);
+    line-height: 1.05;
+  }
+
+  .hero p {
+    max-width: 100%;
+    margin-bottom: 26px;
+
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+  .hero__button {
+    width: 100%;
+    max-width: 320px;
+  }
+}@media (max-width: 768px) {
+  .hero {
     min-height: 560px;
     padding: 64px 20px;
 
