@@ -1,4 +1,16 @@
+import { buildWhatsAppUrl } from '../../config/whatsapp'
 import './CategoriesSection.css'
+
+const solutions = [
+  'Armar un set de herramientas',
+  'Colocar una estantería',
+  'Sellar, pegar o lubricar',
+  'Pintar',
+  'Trabajar en el jardín',
+  'Reparar electricidad',
+  'Plomería',
+]
+
 export function CategoriesSection() {
   return (
     <section className="categories" id="soluciones">
@@ -15,33 +27,22 @@ export function CategoriesSection() {
         </div>
 
         <div className="categories__grid">
-          <article className="category-card">
-            <h3>Armar un set de herramientas</h3>
-          </article>
+          {solutions.map((solution) => {
+            const message =
+              `Hola! Estoy viendo la web de Ferretería La Forja y necesito ayuda con: ${solution}.`
 
-          <article className="category-card">
-            <h3>Colocar una estantería</h3>
-          </article>
-
-          <article className="category-card">
-            <h3>Sellar, pegar o lubricar</h3>
-          </article>
-
-          <article className="category-card">
-            <h3>Pintar</h3>
-          </article>
-
-          <article className="category-card">
-            <h3>Trabajar en el jardín</h3>
-          </article>
-
-          <article className="category-card">
-            <h3>Reparar electricidad</h3>
-          </article>
-
-          <article className="category-card">
-            <h3>Plomería</h3>
-          </article>
+            return (
+              <a
+                className="category-card"
+                href={buildWhatsAppUrl(message)}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={solution}
+              >
+                <h3>{solution}</h3>
+              </a>
+            )
+          })}
         </div>
       </div>
     </section>
