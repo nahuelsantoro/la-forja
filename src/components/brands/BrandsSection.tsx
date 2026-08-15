@@ -11,7 +11,7 @@ const brands = [
 
 export function BrandsSection() {
   return (
-    <section className="brands">
+    <section className="brands" id="marcas">
       <div className="brands__container">
         <div className="brands__heading">
           <span>MARCAS QUE TRABAJAMOS</span>

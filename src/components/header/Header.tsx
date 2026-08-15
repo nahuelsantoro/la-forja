@@ -35,14 +35,13 @@ export function Header() {
           {menuOpen ? '✕' : '☰'}
         </button>
 
-        <nav className={`header__nav ${menuOpen ? 'header__nav--open' : ''}`}>
-          <a href="#inicio" onClick={closeMenu}>Inicio</a>
-          <a href="#productos" onClick={closeMenu}>Productos</a>
-          <a href="#soluciones" onClick={closeMenu}>Soluciones</a>
-          <a href="#marcas" onClick={closeMenu}>Marcas</a>
-          <a href="#ofertas" onClick={closeMenu}>Ofertas</a>
-          <a href="#nosotros" onClick={closeMenu}>Nosotros</a>
-        </nav>
+       <nav className={`header__nav ${menuOpen ? 'header__nav--open' : ''}`}>
+  <a href="#inicio" onClick={closeMenu}>Inicio</a>
+  <a href="#productos" onClick={closeMenu}>Productos</a>
+  <a href="#soluciones" onClick={closeMenu}>Soluciones</a>
+  <a href="#marcas" onClick={closeMenu}>Marcas</a>
+  <a href="#nosotros" onClick={closeMenu}>Nosotros</a>
+</nav>
 
       </div>
     </header>

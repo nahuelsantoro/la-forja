@@ -4,7 +4,7 @@ import './HeroSection.css'
 export function HeroSection() {
   return (
     <section
-      className="hero"
+      className="hero" id ="inicio"
       style={{ backgroundImage: `url(${heroImage})` }}
     >
       <div className="hero__content">
