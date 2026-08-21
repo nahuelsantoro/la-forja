@@ -1,6 +1,14 @@
 .header {
-  background-color: #111111;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+
+  background-color: rgba(17, 17, 17, 0.97);
+  backdrop-filter: blur(8px);
+
   border-bottom: 3px solid #f97316;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
 }
 
 .header__container {
@@ -16,11 +24,23 @@
   position: relative;
 }
 
+/* LOGO */
+
+.header__logo {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
 .header__logo img {
   width: 180px;
   height: auto;
+
   display: block;
 }
+
+/* NAVEGACIÓN */
 
 .header__nav {
   display: flex;
@@ -30,29 +50,96 @@
 
 .header__nav a {
   color: #ffffff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
 
-  transition: color 0.2s ease;
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .header__nav a:hover {
   color: #f97316;
 }
 
+/* BOTÓN WHATSAPP DEL HEADER */
+
+.header__nav .header__whatsapp {
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f97316;
+  color: #ffffff;
+
+  border-radius: 9px;
+
+  font-size: 0.85rem;
+  font-weight: 800;
+
+  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.25);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.header__nav .header__whatsapp:hover {
+  background-color: #e8640c;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 9px 20px rgba(249, 115, 22, 0.35);
+}
+
+/* BOTÓN MENÚ HAMBURGUESA */
+
 .header__menu-button {
   display: none;
 
+  padding: 6px;
+
   border: 0;
   background: transparent;
+
   color: #ffffff;
 
   font-size: 1.8rem;
+
   cursor: pointer;
 }
 
-/* Mobile */
+/* TABLET */
+
+@media (max-width: 950px) {
+  .header__nav {
+    gap: 16px;
+  }
+
+  .header__nav a {
+    font-size: 0.82rem;
+  }
+
+  .header__nav .header__whatsapp {
+    padding: 0 14px;
+  }
+
+  .header__logo img {
+    width: 160px;
+  }
+}
+
+/* MOBILE */
+
 @media (max-width: 768px) {
   .header__container {
     padding: 10px 20px;
@@ -64,26 +151,34 @@
 
   .header__menu-button {
     display: block;
-    z-index: 1001;
+
+    position: relative;
+    z-index: 2002;
   }
 
   .header__nav {
     position: absolute;
+
     top: 100%;
     left: 0;
     right: 0;
 
     display: none;
+
     flex-direction: column;
     align-items: stretch;
+
     gap: 0;
 
     padding: 12px 20px 20px;
 
     background-color: #111111;
+
     border-bottom: 3px solid #f97316;
 
-    z-index: 1000;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+
+    z-index: 2001;
   }
 
   .header__nav--open {
@@ -95,7 +190,20 @@
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
+    color: #ffffff;
+
     font-size: 1rem;
+  }
+
+  .header__nav .header__whatsapp {
+    min-height: 46px;
+
+    margin-top: 14px;
+    padding: 0 18px;
+
+    border-bottom: 0;
+
+    text-align: center;
   }
 
   .header__nav a:last-child {

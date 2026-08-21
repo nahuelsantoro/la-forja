@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import logoLaForja from '../../assets/logo-la-forja.png'
 import './Header.css'
-
+import { buildWhatsAppUrl } from '../../config/whatsapp'
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -41,6 +41,17 @@ export function Header() {
   <a href="#soluciones" onClick={closeMenu}>Soluciones</a>
   <a href="#marcas" onClick={closeMenu}>Marcas</a>
   <a href="#nosotros" onClick={closeMenu}>Nosotros</a>
+  <a
+  className="header__whatsapp"
+  href={buildWhatsAppUrl(
+    'Hola! Estoy viendo la web de Ferretería La Forja y quería hacer una consulta.'
+  )}
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={closeMenu}
+>
+  WhatsApp
+</a>
 </nav>
 
       </div>

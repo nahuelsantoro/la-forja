@@ -1,6 +1,13 @@
 .brands {
-  padding: 72px 24px;
-  background-color: #ffffff;
+  padding: 80px 24px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(249, 115, 22, 0.12),
+      transparent 30%
+    ),
+    #151515;
 }
 
 .brands__container {
@@ -9,8 +16,8 @@
 }
 
 .brands__heading {
-  max-width: 720px;
-  margin-bottom: 36px;
+  max-width: 760px;
+  margin-bottom: 40px;
 }
 
 .brands__heading span {
@@ -26,7 +33,7 @@
 .brands__heading h2 {
   margin: 0 0 14px;
 
-  color: #111111;
+  color: #ffffff;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
 }
@@ -34,7 +41,7 @@
 .brands__heading p {
   margin: 0;
 
-  color: #5a5a5a;
+  color: #b7b7b7;
   font-size: 1.05rem;
   line-height: 1.6;
 }
@@ -42,38 +49,67 @@
 .brands__grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
 
 .brand-card {
-  min-height: 100px;
+  height: 120px;
+  padding: 20px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 18px;
+  overflow: hidden;
 
-  background-color: #f7f7f7;
-  border: 1px solid #e7e7e7;
-  border-radius: 10px;
+  background:
+    linear-gradient(
+      145deg,
+      #252525,
+      #1b1b1b
+    );
 
-  color: #1a1a1a;
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
+  border: 1px solid #363636;
+  border-radius: 14px;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
 
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
-    color 0.2s ease;
+    box-shadow 0.2s ease;
+}
+
+.brand-card img {
+  width: 100%;
+  max-width: 130px;
+  max-height: 65px;
+
+  object-fit: contain;
+
+  filter: brightness(0.95);
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
 }
 
 .brand-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+
   border-color: #f97316;
-  color: #f97316;
+
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(249, 115, 22, 0.15);
 }
+
+.brand-card:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.08);
+}
+
+/* TABLET */
 
 @media (max-width: 1000px) {
   .brands__grid {
@@ -81,16 +117,33 @@
   }
 }
 
+/* MOBILE */
+
 @media (max-width: 600px) {
   .brands {
     padding: 56px 20px;
   }
 
+  .brands__heading {
+    margin-bottom: 28px;
+  }
+
+  .brands__heading p {
+    font-size: 1rem;
+  }
+
   .brands__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .brand-card {
-    min-height: 85px;
+    height: 100px;
+    padding: 14px;
+  }
+
+  .brand-card img {
+    max-width: 110px;
+    max-height: 55px;
   }
 }
